@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function countDown(time) {
+            var newTime = +new Date();
+            var inputTime = +new Date(time);
+            var cDTime = (inputTime - newTime) / 1000;
+            var d = parseInt(cDTime / 60 / 60 / 24);
+            d = d > 10 ? '0' + d : d;
+            var h = parseInt(cDTime / 60 / 60 % 24);
+            h = h > 10 ? '0' + h : h;
+            var m = parseInt(cDTime / 60 % 60);
+            m = m > 10 ? '0' + m : m;
+            var s = parseInt(cDTime % 60);
+            s = s > 10 ? '0' + s : s;
+            return '当前距离活动结束还有' + d + '天' + h + '时' + m + '分' + s + '秒';
+        }
+        // console.log(countDown('2021-3-9 15:50:00'));
+        function unique(arr) {
+            var newArr = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (newArr.indexOf(arr[i]) == -1) {
+                    newArr.push(arr[i])
+                }
+            }
+            return newArr;
+        }
+        console.log(unique(['q', 'w', 'e', 'w', 'r', 'a', 's', 'd']));
+    </script>
+</body>
+
+</html>
